@@ -1,0 +1,15 @@
+﻿@page
+@model SecretSanta.Web.Pages.IndexModel
+
+<div class="jumbotron">
+    <h1 class="display-3">Welcome to @ViewData["Title"]</h1>
+    <p class="lead">The easy way to set up Secret Santa for families.</p>
+    <hr />
+    <h2>This is a Razor page.</h2>
+    <p>Matching gifts to givers all around the world.</p>
+    <p>Today is @Model.DayName</p>
+    <p>
+        <a class="btn btn-primary"
+           href="/Participants">Manage Participants</a>
+    </p>
+</div>
