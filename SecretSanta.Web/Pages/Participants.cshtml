@@ -17,7 +17,7 @@
                 @foreach (Participant p in Model.Participants)
                 {
                     <tr>
-                        <td>@p.ParticipantName</td>
+                        <td><a href="ParticipantDetail?id=@p.ParticipantId">@p.ParticipantName</a></td>
                     </tr>
                 }
             }

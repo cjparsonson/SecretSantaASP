@@ -12,6 +12,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 app.UseHttpsRedirection();
+app.Use(async (HttpContext context, Func<Task> next) =>
+{
+    RouteEndpoint? rep = context.GetEndpoint() as RouteEndpoint;
+    if (rep is not null)
+    {
+        WriteLine($"Endpoint name: {rep.DisplayName}");
+        WriteLine($"Endpoint route pattern: {rep.RoutePattern.RawText}");
+    }
+    await next();
+});
 app.UseDefaultFiles();
 app.UseStaticFiles();
 app.MapRazorPages();
