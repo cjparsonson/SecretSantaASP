@@ -1,0 +1,30 @@
+﻿@page
+@using SecretSanta.EntityModels
+@model SecretSanta.Web.Pages.MatchingModel
+
+<div class="row">
+    <h1 class="display-2">Matching Results</h1>
+    <table class="table table-striped">
+<thead class="thead-inverse">
+            <tr>
+                <th>Matching @DateTime.Now</th>
+            </tr>
+        <tbody>
+            @if (Model.matchedParticipants is not null)
+            {
+                @foreach (var p in Model.matchedParticipants)
+                {
+                    <tr>
+                        <td>@p</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>
+<div class="row">
+    <form method="get">
+        <button type="submit" class="btn btn-primary">Re-Match</button>
+    </form>
+</div>
+
